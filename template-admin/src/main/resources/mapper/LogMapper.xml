@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backtime.template.admin.mapper.LogMapper">
+
+    <insert id="insertSelective">
+        insert into sys_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.logId != null">
+                <if test="record.logId == '' and insertEmptyString">
+                    log_id,
+                </if>
+                <if test="record.logId != ''">
+                    log_id,
+                </if>
+            </if>
+            <if test="record.tableName != null">
+                <if test="record.tableName == '' and insertEmptyString">
+                table_name,
+                </if>
+                <if test="record.tableName != ''">
+                    table_name,
+                </if>
+            </if>
+            <if test="record.type != null">
+                <if test="record.type == '' and insertEmptyString">
+                type,
+                </if>
+                <if test="record.type != ''">
+                    type,
+                </if>
+            </if>
+            <if test="record.method != null">
+                <if test="record.method == '' and insertEmptyString">
+                method,
+                </if>
+                <if test="record.method != ''">
+                    method,
+                </if>
+            </if>
+            <if test="record.operation != null">
+                <if test="record.operation == '' and insertEmptyString">
+                operation,
+                </if>
+                <if test="record.operation != ''">
+                    operation,
+                </if>
+            </if>
+            <if test="record.description != null">
+                <if test="record.description == '' and insertEmptyString">
+                description,
+                </if>
+                <if test="record.description != ''">
+                    description,
+                </if>
+            </if>
+            <if test="record.remark != null">
+                <if test="record.remark == '' and insertEmptyString">
+                remark,
+                </if>
+                <if test="record.remark != ''">
+                    remark,
+                </if>
+            </if>
+            <if test="record.ip != null">
+                <if test="record.ip == '' and insertEmptyString">
+                ip,
+                </if>
+                <if test="record.ip != ''">
+                    ip,
+                </if>
+            </if>
+            <if test="record.state != null">
+                state,
+            </if>
+            <if test="record.createAt != null">
+                create_at,
+            </if>
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                user_id,
+                </if>
+                <if test="record.userId != ''">
+                    user_id,
+                </if>
+            </if>
+            <if test="record.userName != null">
+                <if test="record.userName == '' and insertEmptyString">
+                user_name,
+                </if>
+                <if test="record.userName != ''">
+                    user_name,
+                </if>
+            </if>
+        </trim>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.logId != null">
+                <if test="record.logId == '' and insertEmptyString">
+                    #{record.logId},
+                </if>
+                <if test="record.logId != ''">
+                    #{record.logId},
+                </if>
+            </if>
+            <if test="record.tableName != null">
+                <if test="record.tableName == '' and insertEmptyString">
+                    #{record.tableName},
+                </if>
+                <if test="record.tableName != ''">
+                    #{record.tableName},
+                </if>
+            </if>
+            <if test="record.type != null">
+                <if test="record.type == '' and insertEmptyString">
+                    #{record.type},
+                </if>
+                <if test="record.type != ''">
+                    #{record.type},
+                </if>
+            </if>
+            <if test="record.method != null">
+                <if test="record.method == '' and insertEmptyString">
+                    #{record.method},
+                </if>
+                <if test="record.method != ''">
+                    #{record.method},
+                </if>
+            </if>
+            <if test="record.operation != null">
+                <if test="record.operation == '' and insertEmptyString">
+                    #{record.operation},
+                </if>
+                <if test="record.operation != ''">
+                    #{record.operation},
+                </if>
+            </if>
+            <if test="record.description != null">
+                <if test="record.description == '' and insertEmptyString">
+                    #{record.description},
+                </if>
+                <if test="record.description != ''">
+                    #{record.description},
+                </if>
+            </if>
+            <if test="record.remark != null">
+                <if test="record.remark == '' and insertEmptyString">
+                    #{record.remark},
+                </if>
+                <if test="record.remark != ''">
+                    #{record.remark},
+                </if>
+            </if>
+            <if test="record.ip != null">
+                <if test="record.ip == '' and insertEmptyString">
+                    #{record.ip},
+                </if>
+                <if test="record.ip != ''">
+                    #{record.ip},
+                </if>
+            </if>
+            <if test="record.state != null">
+                #{record.state},
+            </if>
+            <if test="record.createAt != null">
+                #{record.createAt},
+            </if>
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                    #{record.userId},
+                </if>
+                <if test="record.userId != ''">
+                    #{record.userId},
+                </if>
+            </if>
+            <if test="record.userName != null">
+                <if test="record.userName == '' and insertEmptyString">
+                    #{record.userName},
+                </if>
+                <if test="record.userName != ''">
+                    #{record.userName},
+                </if>
+            </if>
+            <if test="record.logId != null">
+                #{record.logId},
+            </if>
+            <if test="record.tableName != null">
+                #{record.tableName},
+            </if>
+            <if test="record.type != null">
+                #{record.type},
+            </if>
+            <if test="record.method != null">
+                #{record.method},
+            </if>
+            <if test="record.operation != null">
+                #{record.operation},
+            </if>
+            <if test="record.description != null">
+                #{record.description},
+            </if>
+            <if test="record.remark != null">
+                #{record.remark},
+            </if>
+            <if test="record.ip != null">
+                #{record.ip},
+            </if>
+            <if test="record.state != null">
+                #{record.state},
+            </if>
+            <if test="record.createAt != null">
+                #{record.createAt},
+            </if>
+            <if test="record.userId != null">
+                #{record.userId},
+            </if>
+            <if test="record.userName != null">
+                #{record.userName},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective">
+        update sys_log
+        set
+        <trim suffixOverrides=",">
+        <if test="record.tableName != null">
+            <if test="record.tableName == '' and updateEmptyString">
+            table_name = #{record.tableName},
+            </if>
+            <if test="record.tableName != ''">
+                table_name = #{record.tableName},
+            </if>
+        </if>
+        <if test="record.type != null">
+            <if test="record.type == '' and updateEmptyString">
+            type = #{record.type},
+            </if>
+            <if test="record.type != ''">
+                type = #{record.type},
+            </if>
+        </if>
+        <if test="record.method != null">
+            <if test="record.method == '' and updateEmptyString">
+            method = #{record.method},
+            </if>
+            <if test="record.method != ''">
+                method = #{record.method},
+            </if>
+        </if>
+        <if test="record.operation != null">
+            <if test="record.operation == '' and updateEmptyString">
+            operation = #{record.operation},
+            </if>
+            <if test="record.operation != ''">
+                operation = #{record.operation},
+            </if>
+        </if>
+        <if test="record.description != null">
+            <if test="record.description == '' and updateEmptyString">
+            description = #{record.description},
+            </if>
+            <if test="record.description != ''">
+                description = #{record.description},
+            </if>
+        </if>
+        <if test="record.remark != null">
+            <if test="record.remark == '' and updateEmptyString">
+            remark = #{record.remark},
+            </if>
+            <if test="record.remark != ''">
+                remark = #{record.remark},
+            </if>
+        </if>
+        <if test="record.ip != null">
+            <if test="record.ip == '' and updateEmptyString">
+            ip = #{record.ip},
+            </if>
+            <if test="record.ip != ''">
+                ip = #{record.ip},
+            </if>
+        </if>
+        <if test="record.state != null">
+            state = #{record.state},
+        </if>
+        <if test="record.createAt != null">
+            create_at = #{record.createAt},
+        </if>
+        <if test="record.userId != null">
+            <if test="record.userId == '' and updateEmptyString">
+            user_id = #{record.userId},
+            </if>
+            <if test="record.userId != ''">
+                user_id = #{record.userId},
+            </if>
+        </if>
+        <if test="record.userName != null">
+            <if test="record.userName == '' and updateEmptyString">
+            user_name = #{record.userName},
+            </if>
+            <if test="record.userName != ''">
+                user_name = #{record.userName},
+            </if>
+        </if>
+        </trim>
+        where
+        <trim suffixOverrides=" and">
+            log_id = #{record.logId} and
+        </trim>
+    </update>
+</mapper>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backtime.template.auth.mapper.RoleMapper">
+
+    <insert id="insertSelective">
+        insert into sys_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.roleId != null">
+                <if test="record.roleId == '' and insertEmptyString">
+                    role_id,
+                </if>
+                <if test="record.roleId != ''">
+                    role_id,
+                </if>
+            </if>
+            <if test="record.roleName != null">
+                <if test="record.roleName == '' and insertEmptyString">
+                role_name,
+                </if>
+                <if test="record.roleName != ''">
+                    role_name,
+                </if>
+            </if>
+            <if test="record.isSuper != null">
+                is_super,
+            </if>
+            <if test="record.isManager != null">
+                is_manager,
+            </if>
+            <if test="record.canDelete != null">
+                can_delete,
+            </if>
+            <if test="record.isDelete != null">
+                is_delete,
+            </if>
+            <if test="record.createTime != null">
+                create_time,
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                create_user_id,
+                </if>
+                <if test="record.createUserId != ''">
+                    create_user_id,
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                create_user_name,
+                </if>
+                <if test="record.createUserName != ''">
+                    create_user_name,
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                update_time,
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                update_user_id,
+                </if>
+                <if test="record.updateUserId != ''">
+                    update_user_id,
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                update_user_name,
+                </if>
+                <if test="record.updateUserName != ''">
+                    update_user_name,
+                </if>
+            </if>
+        </trim>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.roleId != null">
+                <if test="record.roleId == '' and insertEmptyString">
+                    #{record.roleId},
+                </if>
+                <if test="record.roleId != ''">
+                    #{record.roleId},
+                </if>
+            </if>
+            <if test="record.roleName != null">
+                <if test="record.roleName == '' and insertEmptyString">
+                    #{record.roleName},
+                </if>
+                <if test="record.roleName != ''">
+                    #{record.roleName},
+                </if>
+            </if>
+            <if test="record.isSuper != null">
+                #{record.isSuper},
+            </if>
+            <if test="record.isManager != null">
+                #{record.isManager},
+            </if>
+            <if test="record.canDelete != null">
+                #{record.canDelete},
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                    #{record.createUserId},
+                </if>
+                <if test="record.createUserId != ''">
+                    #{record.createUserId},
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                    #{record.createUserName},
+                </if>
+                <if test="record.createUserName != ''">
+                    #{record.createUserName},
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                    #{record.updateUserId},
+                </if>
+                <if test="record.updateUserId != ''">
+                    #{record.updateUserId},
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                    #{record.updateUserName},
+                </if>
+                <if test="record.updateUserName != ''">
+                    #{record.updateUserName},
+                </if>
+            </if>
+            <if test="record.roleId != null">
+                #{record.roleId},
+            </if>
+            <if test="record.roleName != null">
+                #{record.roleName},
+            </if>
+            <if test="record.isSuper != null">
+                #{record.isSuper},
+            </if>
+            <if test="record.isManager != null">
+                #{record.isManager},
+            </if>
+            <if test="record.canDelete != null">
+                #{record.canDelete},
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                #{record.createUserId},
+            </if>
+            <if test="record.createUserName != null">
+                #{record.createUserName},
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                #{record.updateUserId},
+            </if>
+            <if test="record.updateUserName != null">
+                #{record.updateUserName},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective">
+        update sys_role
+        set
+        <trim suffixOverrides=",">
+        <if test="record.roleName != null">
+            <if test="record.roleName == '' and updateEmptyString">
+            role_name = #{record.roleName},
+            </if>
+            <if test="record.roleName != ''">
+                role_name = #{record.roleName},
+            </if>
+        </if>
+        <if test="record.isSuper != null">
+            is_super = #{record.isSuper},
+        </if>
+        <if test="record.isManager != null">
+            is_manager = #{record.isManager},
+        </if>
+        <if test="record.canDelete != null">
+            can_delete = #{record.canDelete},
+        </if>
+        <if test="record.isDelete != null">
+            is_delete = #{record.isDelete},
+        </if>
+        <if test="record.createTime != null">
+            create_time = #{record.createTime},
+        </if>
+        <if test="record.createUserId != null">
+            <if test="record.createUserId == '' and updateEmptyString">
+            create_user_id = #{record.createUserId},
+            </if>
+            <if test="record.createUserId != ''">
+                create_user_id = #{record.createUserId},
+            </if>
+        </if>
+        <if test="record.createUserName != null">
+            <if test="record.createUserName == '' and updateEmptyString">
+            create_user_name = #{record.createUserName},
+            </if>
+            <if test="record.createUserName != ''">
+                create_user_name = #{record.createUserName},
+            </if>
+        </if>
+        <if test="record.updateTime != null">
+            update_time = #{record.updateTime},
+        </if>
+        <if test="record.updateUserId != null">
+            <if test="record.updateUserId == '' and updateEmptyString">
+            update_user_id = #{record.updateUserId},
+            </if>
+            <if test="record.updateUserId != ''">
+                update_user_id = #{record.updateUserId},
+            </if>
+        </if>
+        <if test="record.updateUserName != null">
+            <if test="record.updateUserName == '' and updateEmptyString">
+            update_user_name = #{record.updateUserName},
+            </if>
+            <if test="record.updateUserName != ''">
+                update_user_name = #{record.updateUserName},
+            </if>
+        </if>
+        </trim>
+        where
+        <trim suffixOverrides=" and">
+            role_id = #{record.roleId} and
+        </trim>
+    </update>
+</mapper>

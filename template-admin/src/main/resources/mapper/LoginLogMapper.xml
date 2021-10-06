@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backtime.template.admin.mapper.LoginLogMapper">
+
+    <insert id="insertSelective">
+        insert into sys_login_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.loginLogId != null">
+                <if test="record.loginLogId == '' and insertEmptyString">
+                    login_log_id,
+                </if>
+                <if test="record.loginLogId != ''">
+                    login_log_id,
+                </if>
+            </if>
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                user_id,
+                </if>
+                <if test="record.userId != ''">
+                    user_id,
+                </if>
+            </if>
+            <if test="record.userName != null">
+                <if test="record.userName == '' and insertEmptyString">
+                user_name,
+                </if>
+                <if test="record.userName != ''">
+                    user_name,
+                </if>
+            </if>
+            <if test="record.time != null">
+                time,
+            </if>
+            <if test="record.ip != null">
+                <if test="record.ip == '' and insertEmptyString">
+                ip,
+                </if>
+                <if test="record.ip != ''">
+                    ip,
+                </if>
+            </if>
+            <if test="record.macAddress != null">
+                <if test="record.macAddress == '' and insertEmptyString">
+                mac_address,
+                </if>
+                <if test="record.macAddress != ''">
+                    mac_address,
+                </if>
+            </if>
+            <if test="record.address != null">
+                <if test="record.address == '' and insertEmptyString">
+                address,
+                </if>
+                <if test="record.address != ''">
+                    address,
+                </if>
+            </if>
+            <if test="record.browser != null">
+                <if test="record.browser == '' and insertEmptyString">
+                browser,
+                </if>
+                <if test="record.browser != ''">
+                    browser,
+                </if>
+            </if>
+            <if test="record.os != null">
+                <if test="record.os == '' and insertEmptyString">
+                os,
+                </if>
+                <if test="record.os != ''">
+                    os,
+                </if>
+            </if>
+        </trim>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.loginLogId != null">
+                <if test="record.loginLogId == '' and insertEmptyString">
+                    #{record.loginLogId},
+                </if>
+                <if test="record.loginLogId != ''">
+                    #{record.loginLogId},
+                </if>
+            </if>
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                    #{record.userId},
+                </if>
+                <if test="record.userId != ''">
+                    #{record.userId},
+                </if>
+            </if>
+            <if test="record.userName != null">
+                <if test="record.userName == '' and insertEmptyString">
+                    #{record.userName},
+                </if>
+                <if test="record.userName != ''">
+                    #{record.userName},
+                </if>
+            </if>
+            <if test="record.time != null">
+                #{record.time},
+            </if>
+            <if test="record.ip != null">
+                <if test="record.ip == '' and insertEmptyString">
+                    #{record.ip},
+                </if>
+                <if test="record.ip != ''">
+                    #{record.ip},
+                </if>
+            </if>
+            <if test="record.macAddress != null">
+                <if test="record.macAddress == '' and insertEmptyString">
+                    #{record.macAddress},
+                </if>
+                <if test="record.macAddress != ''">
+                    #{record.macAddress},
+                </if>
+            </if>
+            <if test="record.address != null">
+                <if test="record.address == '' and insertEmptyString">
+                    #{record.address},
+                </if>
+                <if test="record.address != ''">
+                    #{record.address},
+                </if>
+            </if>
+            <if test="record.browser != null">
+                <if test="record.browser == '' and insertEmptyString">
+                    #{record.browser},
+                </if>
+                <if test="record.browser != ''">
+                    #{record.browser},
+                </if>
+            </if>
+            <if test="record.os != null">
+                <if test="record.os == '' and insertEmptyString">
+                    #{record.os},
+                </if>
+                <if test="record.os != ''">
+                    #{record.os},
+                </if>
+            </if>
+            <if test="record.loginLogId != null">
+                #{record.loginLogId},
+            </if>
+            <if test="record.userId != null">
+                #{record.userId},
+            </if>
+            <if test="record.userName != null">
+                #{record.userName},
+            </if>
+            <if test="record.time != null">
+                #{record.time},
+            </if>
+            <if test="record.ip != null">
+                #{record.ip},
+            </if>
+            <if test="record.macAddress != null">
+                #{record.macAddress},
+            </if>
+            <if test="record.address != null">
+                #{record.address},
+            </if>
+            <if test="record.browser != null">
+                #{record.browser},
+            </if>
+            <if test="record.os != null">
+                #{record.os},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective">
+        update sys_login_log
+        set
+        <trim suffixOverrides=",">
+        <if test="record.userId != null">
+            <if test="record.userId == '' and updateEmptyString">
+            user_id = #{record.userId},
+            </if>
+            <if test="record.userId != ''">
+                user_id = #{record.userId},
+            </if>
+        </if>
+        <if test="record.userName != null">
+            <if test="record.userName == '' and updateEmptyString">
+            user_name = #{record.userName},
+            </if>
+            <if test="record.userName != ''">
+                user_name = #{record.userName},
+            </if>
+        </if>
+        <if test="record.time != null">
+            time = #{record.time},
+        </if>
+        <if test="record.ip != null">
+            <if test="record.ip == '' and updateEmptyString">
+            ip = #{record.ip},
+            </if>
+            <if test="record.ip != ''">
+                ip = #{record.ip},
+            </if>
+        </if>
+        <if test="record.macAddress != null">
+            <if test="record.macAddress == '' and updateEmptyString">
+            mac_address = #{record.macAddress},
+            </if>
+            <if test="record.macAddress != ''">
+                mac_address = #{record.macAddress},
+            </if>
+        </if>
+        <if test="record.address != null">
+            <if test="record.address == '' and updateEmptyString">
+            address = #{record.address},
+            </if>
+            <if test="record.address != ''">
+                address = #{record.address},
+            </if>
+        </if>
+        <if test="record.browser != null">
+            <if test="record.browser == '' and updateEmptyString">
+            browser = #{record.browser},
+            </if>
+            <if test="record.browser != ''">
+                browser = #{record.browser},
+            </if>
+        </if>
+        <if test="record.os != null">
+            <if test="record.os == '' and updateEmptyString">
+            os = #{record.os},
+            </if>
+            <if test="record.os != ''">
+                os = #{record.os},
+            </if>
+        </if>
+        </trim>
+        where
+        <trim suffixOverrides=" and">
+            login_log_id = #{record.loginLogId} and
+        </trim>
+    </update>
+</mapper>

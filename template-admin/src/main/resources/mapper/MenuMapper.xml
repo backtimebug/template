@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backtime.template.admin.mapper.MenuMapper">
+
+    <insert id="insertSelective">
+        insert into sys_menu
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.menuId != null">
+                <if test="record.menuId == '' and insertEmptyString">
+                    menu_id,
+                </if>
+                <if test="record.menuId != ''">
+                    menu_id,
+                </if>
+            </if>
+            <if test="record.menuName != null">
+                <if test="record.menuName == '' and insertEmptyString">
+                menu_name,
+                </if>
+                <if test="record.menuName != ''">
+                    menu_name,
+                </if>
+            </if>
+            <if test="record.parentId != null">
+                <if test="record.parentId == '' and insertEmptyString">
+                parent_id,
+                </if>
+                <if test="record.parentId != ''">
+                    parent_id,
+                </if>
+            </if>
+            <if test="record.title != null">
+                <if test="record.title == '' and insertEmptyString">
+                title,
+                </if>
+                <if test="record.title != ''">
+                    title,
+                </if>
+            </if>
+            <if test="record.path != null">
+                <if test="record.path == '' and insertEmptyString">
+                path,
+                </if>
+                <if test="record.path != ''">
+                    path,
+                </if>
+            </if>
+            <if test="record.redirect != null">
+                <if test="record.redirect == '' and insertEmptyString">
+                redirect,
+                </if>
+                <if test="record.redirect != ''">
+                    redirect,
+                </if>
+            </if>
+            <if test="record.component != null">
+                <if test="record.component == '' and insertEmptyString">
+                component,
+                </if>
+                <if test="record.component != ''">
+                    component,
+                </if>
+            </if>
+            <if test="record.alwaysShow != null">
+                always_show,
+            </if>
+            <if test="record.icon != null">
+                <if test="record.icon == '' and insertEmptyString">
+                icon,
+                </if>
+                <if test="record.icon != ''">
+                    icon,
+                </if>
+            </if>
+            <if test="record.type != null">
+                <if test="record.type == '' and insertEmptyString">
+                type,
+                </if>
+                <if test="record.type != ''">
+                    type,
+                </if>
+            </if>
+            <if test="record.hidden != null">
+                hidden,
+            </if>
+            <if test="record.noCache != null">
+                no_cache,
+            </if>
+            <if test="record.isShow != null">
+                is_show,
+            </if>
+            <if test="record.sort != null">
+                sort,
+            </if>
+            <if test="record.isDelete != null">
+                is_delete,
+            </if>
+            <if test="record.createTime != null">
+                create_time,
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                create_user_id,
+                </if>
+                <if test="record.createUserId != ''">
+                    create_user_id,
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                create_user_name,
+                </if>
+                <if test="record.createUserName != ''">
+                    create_user_name,
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                update_time,
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                update_user_id,
+                </if>
+                <if test="record.updateUserId != ''">
+                    update_user_id,
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                update_user_name,
+                </if>
+                <if test="record.updateUserName != ''">
+                    update_user_name,
+                </if>
+            </if>
+        </trim>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.menuId != null">
+                <if test="record.menuId == '' and insertEmptyString">
+                    #{record.menuId},
+                </if>
+                <if test="record.menuId != ''">
+                    #{record.menuId},
+                </if>
+            </if>
+            <if test="record.menuName != null">
+                <if test="record.menuName == '' and insertEmptyString">
+                    #{record.menuName},
+                </if>
+                <if test="record.menuName != ''">
+                    #{record.menuName},
+                </if>
+            </if>
+            <if test="record.parentId != null">
+                <if test="record.parentId == '' and insertEmptyString">
+                    #{record.parentId},
+                </if>
+                <if test="record.parentId != ''">
+                    #{record.parentId},
+                </if>
+            </if>
+            <if test="record.title != null">
+                <if test="record.title == '' and insertEmptyString">
+                    #{record.title},
+                </if>
+                <if test="record.title != ''">
+                    #{record.title},
+                </if>
+            </if>
+            <if test="record.path != null">
+                <if test="record.path == '' and insertEmptyString">
+                    #{record.path},
+                </if>
+                <if test="record.path != ''">
+                    #{record.path},
+                </if>
+            </if>
+            <if test="record.redirect != null">
+                <if test="record.redirect == '' and insertEmptyString">
+                    #{record.redirect},
+                </if>
+                <if test="record.redirect != ''">
+                    #{record.redirect},
+                </if>
+            </if>
+            <if test="record.component != null">
+                <if test="record.component == '' and insertEmptyString">
+                    #{record.component},
+                </if>
+                <if test="record.component != ''">
+                    #{record.component},
+                </if>
+            </if>
+            <if test="record.alwaysShow != null">
+                #{record.alwaysShow},
+            </if>
+            <if test="record.icon != null">
+                <if test="record.icon == '' and insertEmptyString">
+                    #{record.icon},
+                </if>
+                <if test="record.icon != ''">
+                    #{record.icon},
+                </if>
+            </if>
+            <if test="record.type != null">
+                <if test="record.type == '' and insertEmptyString">
+                    #{record.type},
+                </if>
+                <if test="record.type != ''">
+                    #{record.type},
+                </if>
+            </if>
+            <if test="record.hidden != null">
+                #{record.hidden},
+            </if>
+            <if test="record.noCache != null">
+                #{record.noCache},
+            </if>
+            <if test="record.isShow != null">
+                #{record.isShow},
+            </if>
+            <if test="record.sort != null">
+                #{record.sort},
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                    #{record.createUserId},
+                </if>
+                <if test="record.createUserId != ''">
+                    #{record.createUserId},
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                    #{record.createUserName},
+                </if>
+                <if test="record.createUserName != ''">
+                    #{record.createUserName},
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                    #{record.updateUserId},
+                </if>
+                <if test="record.updateUserId != ''">
+                    #{record.updateUserId},
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                    #{record.updateUserName},
+                </if>
+                <if test="record.updateUserName != ''">
+                    #{record.updateUserName},
+                </if>
+            </if>
+            <if test="record.menuId != null">
+                #{record.menuId},
+            </if>
+            <if test="record.menuName != null">
+                #{record.menuName},
+            </if>
+            <if test="record.parentId != null">
+                #{record.parentId},
+            </if>
+            <if test="record.title != null">
+                #{record.title},
+            </if>
+            <if test="record.path != null">
+                #{record.path},
+            </if>
+            <if test="record.redirect != null">
+                #{record.redirect},
+            </if>
+            <if test="record.component != null">
+                #{record.component},
+            </if>
+            <if test="record.alwaysShow != null">
+                #{record.alwaysShow},
+            </if>
+            <if test="record.icon != null">
+                #{record.icon},
+            </if>
+            <if test="record.type != null">
+                #{record.type},
+            </if>
+            <if test="record.hidden != null">
+                #{record.hidden},
+            </if>
+            <if test="record.noCache != null">
+                #{record.noCache},
+            </if>
+            <if test="record.isShow != null">
+                #{record.isShow},
+            </if>
+            <if test="record.sort != null">
+                #{record.sort},
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                #{record.createUserId},
+            </if>
+            <if test="record.createUserName != null">
+                #{record.createUserName},
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                #{record.updateUserId},
+            </if>
+            <if test="record.updateUserName != null">
+                #{record.updateUserName},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective">
+        update sys_menu
+        set
+        <trim suffixOverrides=",">
+        <if test="record.menuName != null">
+            <if test="record.menuName == '' and updateEmptyString">
+            menu_name = #{record.menuName},
+            </if>
+            <if test="record.menuName != ''">
+                menu_name = #{record.menuName},
+            </if>
+        </if>
+        <if test="record.parentId != null">
+            <if test="record.parentId == '' and updateEmptyString">
+            parent_id = #{record.parentId},
+            </if>
+            <if test="record.parentId != ''">
+                parent_id = #{record.parentId},
+            </if>
+        </if>
+        <if test="record.title != null">
+            <if test="record.title == '' and updateEmptyString">
+            title = #{record.title},
+            </if>
+            <if test="record.title != ''">
+                title = #{record.title},
+            </if>
+        </if>
+        <if test="record.path != null">
+            <if test="record.path == '' and updateEmptyString">
+            path = #{record.path},
+            </if>
+            <if test="record.path != ''">
+                path = #{record.path},
+            </if>
+        </if>
+        <if test="record.redirect != null">
+            <if test="record.redirect == '' and updateEmptyString">
+            redirect = #{record.redirect},
+            </if>
+            <if test="record.redirect != ''">
+                redirect = #{record.redirect},
+            </if>
+        </if>
+        <if test="record.component != null">
+            <if test="record.component == '' and updateEmptyString">
+            component = #{record.component},
+            </if>
+            <if test="record.component != ''">
+                component = #{record.component},
+            </if>
+        </if>
+        <if test="record.alwaysShow != null">
+            always_show = #{record.alwaysShow},
+        </if>
+        <if test="record.icon != null">
+            <if test="record.icon == '' and updateEmptyString">
+            icon = #{record.icon},
+            </if>
+            <if test="record.icon != ''">
+                icon = #{record.icon},
+            </if>
+        </if>
+        <if test="record.type != null">
+            <if test="record.type == '' and updateEmptyString">
+            type = #{record.type},
+            </if>
+            <if test="record.type != ''">
+                type = #{record.type},
+            </if>
+        </if>
+        <if test="record.hidden != null">
+            hidden = #{record.hidden},
+        </if>
+        <if test="record.noCache != null">
+            no_cache = #{record.noCache},
+        </if>
+        <if test="record.isShow != null">
+            is_show = #{record.isShow},
+        </if>
+        <if test="record.sort != null">
+            sort = #{record.sort},
+        </if>
+        <if test="record.isDelete != null">
+            is_delete = #{record.isDelete},
+        </if>
+        <if test="record.createTime != null">
+            create_time = #{record.createTime},
+        </if>
+        <if test="record.createUserId != null">
+            <if test="record.createUserId == '' and updateEmptyString">
+            create_user_id = #{record.createUserId},
+            </if>
+            <if test="record.createUserId != ''">
+                create_user_id = #{record.createUserId},
+            </if>
+        </if>
+        <if test="record.createUserName != null">
+            <if test="record.createUserName == '' and updateEmptyString">
+            create_user_name = #{record.createUserName},
+            </if>
+            <if test="record.createUserName != ''">
+                create_user_name = #{record.createUserName},
+            </if>
+        </if>
+        <if test="record.updateTime != null">
+            update_time = #{record.updateTime},
+        </if>
+        <if test="record.updateUserId != null">
+            <if test="record.updateUserId == '' and updateEmptyString">
+            update_user_id = #{record.updateUserId},
+            </if>
+            <if test="record.updateUserId != ''">
+                update_user_id = #{record.updateUserId},
+            </if>
+        </if>
+        <if test="record.updateUserName != null">
+            <if test="record.updateUserName == '' and updateEmptyString">
+            update_user_name = #{record.updateUserName},
+            </if>
+            <if test="record.updateUserName != ''">
+                update_user_name = #{record.updateUserName},
+            </if>
+        </if>
+        </trim>
+        where
+        <trim suffixOverrides=" and">
+            menu_id = #{record.menuId} and
+        </trim>
+    </update>
+</mapper>

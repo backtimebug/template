@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backtime.template.auth.mapper.UserMapper">
+
+    <insert id="insertSelective">
+        insert into sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                    user_id,
+                </if>
+                <if test="record.userId != ''">
+                    user_id,
+                </if>
+            </if>
+            <if test="record.nickName != null">
+                <if test="record.nickName == '' and insertEmptyString">
+                nick_name,
+                </if>
+                <if test="record.nickName != ''">
+                    nick_name,
+                </if>
+            </if>
+            <if test="record.name != null">
+                <if test="record.name == '' and insertEmptyString">
+                name,
+                </if>
+                <if test="record.name != ''">
+                    name,
+                </if>
+            </if>
+            <if test="record.phone != null">
+                <if test="record.phone == '' and insertEmptyString">
+                phone,
+                </if>
+                <if test="record.phone != ''">
+                    phone,
+                </if>
+            </if>
+            <if test="record.email != null">
+                <if test="record.email == '' and insertEmptyString">
+                email,
+                </if>
+                <if test="record.email != ''">
+                    email,
+                </if>
+            </if>
+            <if test="record.password != null">
+                <if test="record.password == '' and insertEmptyString">
+                password,
+                </if>
+                <if test="record.password != ''">
+                    password,
+                </if>
+            </if>
+            <if test="record.salt != null">
+                <if test="record.salt == '' and insertEmptyString">
+                salt,
+                </if>
+                <if test="record.salt != ''">
+                    salt,
+                </if>
+            </if>
+            <if test="record.isDelete != null">
+                is_delete,
+            </if>
+            <if test="record.isDisable != null">
+                is_disable,
+            </if>
+            <if test="record.canDelete != null">
+                can_delete,
+            </if>
+            <if test="record.createTime != null">
+                create_time,
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                create_user_id,
+                </if>
+                <if test="record.createUserId != ''">
+                    create_user_id,
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                create_user_name,
+                </if>
+                <if test="record.createUserName != ''">
+                    create_user_name,
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                update_time,
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                update_user_id,
+                </if>
+                <if test="record.updateUserId != ''">
+                    update_user_id,
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                update_user_name,
+                </if>
+                <if test="record.updateUserName != ''">
+                    update_user_name,
+                </if>
+            </if>
+        </trim>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="record.userId != null">
+                <if test="record.userId == '' and insertEmptyString">
+                    #{record.userId},
+                </if>
+                <if test="record.userId != ''">
+                    #{record.userId},
+                </if>
+            </if>
+            <if test="record.nickName != null">
+                <if test="record.nickName == '' and insertEmptyString">
+                    #{record.nickName},
+                </if>
+                <if test="record.nickName != ''">
+                    #{record.nickName},
+                </if>
+            </if>
+            <if test="record.name != null">
+                <if test="record.name == '' and insertEmptyString">
+                    #{record.name},
+                </if>
+                <if test="record.name != ''">
+                    #{record.name},
+                </if>
+            </if>
+            <if test="record.phone != null">
+                <if test="record.phone == '' and insertEmptyString">
+                    #{record.phone},
+                </if>
+                <if test="record.phone != ''">
+                    #{record.phone},
+                </if>
+            </if>
+            <if test="record.email != null">
+                <if test="record.email == '' and insertEmptyString">
+                    #{record.email},
+                </if>
+                <if test="record.email != ''">
+                    #{record.email},
+                </if>
+            </if>
+            <if test="record.password != null">
+                <if test="record.password == '' and insertEmptyString">
+                    #{record.password},
+                </if>
+                <if test="record.password != ''">
+                    #{record.password},
+                </if>
+            </if>
+            <if test="record.salt != null">
+                <if test="record.salt == '' and insertEmptyString">
+                    #{record.salt},
+                </if>
+                <if test="record.salt != ''">
+                    #{record.salt},
+                </if>
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.isDisable != null">
+                #{record.isDisable},
+            </if>
+            <if test="record.canDelete != null">
+                #{record.canDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                <if test="record.createUserId == '' and insertEmptyString">
+                    #{record.createUserId},
+                </if>
+                <if test="record.createUserId != ''">
+                    #{record.createUserId},
+                </if>
+            </if>
+            <if test="record.createUserName != null">
+                <if test="record.createUserName == '' and insertEmptyString">
+                    #{record.createUserName},
+                </if>
+                <if test="record.createUserName != ''">
+                    #{record.createUserName},
+                </if>
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                <if test="record.updateUserId == '' and insertEmptyString">
+                    #{record.updateUserId},
+                </if>
+                <if test="record.updateUserId != ''">
+                    #{record.updateUserId},
+                </if>
+            </if>
+            <if test="record.updateUserName != null">
+                <if test="record.updateUserName == '' and insertEmptyString">
+                    #{record.updateUserName},
+                </if>
+                <if test="record.updateUserName != ''">
+                    #{record.updateUserName},
+                </if>
+            </if>
+            <if test="record.userId != null">
+                #{record.userId},
+            </if>
+            <if test="record.nickName != null">
+                #{record.nickName},
+            </if>
+            <if test="record.name != null">
+                #{record.name},
+            </if>
+            <if test="record.phone != null">
+                #{record.phone},
+            </if>
+            <if test="record.email != null">
+                #{record.email},
+            </if>
+            <if test="record.password != null">
+                #{record.password},
+            </if>
+            <if test="record.salt != null">
+                #{record.salt},
+            </if>
+            <if test="record.isDelete != null">
+                #{record.isDelete},
+            </if>
+            <if test="record.isDisable != null">
+                #{record.isDisable},
+            </if>
+            <if test="record.canDelete != null">
+                #{record.canDelete},
+            </if>
+            <if test="record.createTime != null">
+                #{record.createTime},
+            </if>
+            <if test="record.createUserId != null">
+                #{record.createUserId},
+            </if>
+            <if test="record.createUserName != null">
+                #{record.createUserName},
+            </if>
+            <if test="record.updateTime != null">
+                #{record.updateTime},
+            </if>
+            <if test="record.updateUserId != null">
+                #{record.updateUserId},
+            </if>
+            <if test="record.updateUserName != null">
+                #{record.updateUserName},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByIdSelective">
+        update sys_user
+        set
+        <trim suffixOverrides=",">
+        <if test="record.nickName != null">
+            <if test="record.nickName == '' and updateEmptyString">
+            nick_name = #{record.nickName},
+            </if>
+            <if test="record.nickName != ''">
+                nick_name = #{record.nickName},
+            </if>
+        </if>
+        <if test="record.name != null">
+            <if test="record.name == '' and updateEmptyString">
+            name = #{record.name},
+            </if>
+            <if test="record.name != ''">
+                name = #{record.name},
+            </if>
+        </if>
+        <if test="record.phone != null">
+            <if test="record.phone == '' and updateEmptyString">
+            phone = #{record.phone},
+            </if>
+            <if test="record.phone != ''">
+                phone = #{record.phone},
+            </if>
+        </if>
+        <if test="record.email != null">
+            <if test="record.email == '' and updateEmptyString">
+            email = #{record.email},
+            </if>
+            <if test="record.email != ''">
+                email = #{record.email},
+            </if>
+        </if>
+        <if test="record.password != null">
+            <if test="record.password == '' and updateEmptyString">
+            password = #{record.password},
+            </if>
+            <if test="record.password != ''">
+                password = #{record.password},
+            </if>
+        </if>
+        <if test="record.salt != null">
+            <if test="record.salt == '' and updateEmptyString">
+            salt = #{record.salt},
+            </if>
+            <if test="record.salt != ''">
+                salt = #{record.salt},
+            </if>
+        </if>
+        <if test="record.isDelete != null">
+            is_delete = #{record.isDelete},
+        </if>
+        <if test="record.isDisable != null">
+            is_disable = #{record.isDisable},
+        </if>
+        <if test="record.canDelete != null">
+            can_delete = #{record.canDelete},
+        </if>
+        <if test="record.createTime != null">
+            create_time = #{record.createTime},
+        </if>
+        <if test="record.createUserId != null">
+            <if test="record.createUserId == '' and updateEmptyString">
+            create_user_id = #{record.createUserId},
+            </if>
+            <if test="record.createUserId != ''">
+                create_user_id = #{record.createUserId},
+            </if>
+        </if>
+        <if test="record.createUserName != null">
+            <if test="record.createUserName == '' and updateEmptyString">
+            create_user_name = #{record.createUserName},
+            </if>
+            <if test="record.createUserName != ''">
+                create_user_name = #{record.createUserName},
+            </if>
+        </if>
+        <if test="record.updateTime != null">
+            update_time = #{record.updateTime},
+        </if>
+        <if test="record.updateUserId != null">
+            <if test="record.updateUserId == '' and updateEmptyString">
+            update_user_id = #{record.updateUserId},
+            </if>
+            <if test="record.updateUserId != ''">
+                update_user_id = #{record.updateUserId},
+            </if>
+        </if>
+        <if test="record.updateUserName != null">
+            <if test="record.updateUserName == '' and updateEmptyString">
+            update_user_name = #{record.updateUserName},
+            </if>
+            <if test="record.updateUserName != ''">
+                update_user_name = #{record.updateUserName},
+            </if>
+        </if>
+        </trim>
+        where
+        <trim suffixOverrides=" and">
+            user_id = #{record.userId} and
+        </trim>
+    </update>
+</mapper>
